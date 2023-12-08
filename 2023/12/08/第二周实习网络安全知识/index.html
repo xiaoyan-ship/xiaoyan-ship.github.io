@@ -6,15 +6,24 @@
   
   <title>第二周实习网络安全知识 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="第二周实习 网络安全基础知识一.1.IP与防火墙的设置IP地址分以下五类： A类 ： 从1.0.0.0 到126.255.255.255 ，适用于大型网络 B类 ： 从128.0.0.0到191.255.255.255 ，适用于中型网络 C类 ： 从192.0.0.0到223.255.255.255 ，适用于小型网络 D类 ： 从224.0.0.0到239.255.255.255，用于组播 E类">
+<meta property="og:type" content="article">
 <meta property="og:title" content="第二周实习网络安全知识">
 <meta property="og:url" content="http://example.com/2023/12/08/%E7%AC%AC%E4%BA%8C%E5%91%A8%E5%AE%9E%E4%B9%A0%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%9F%A5%E8%AF%86/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="第二周实习 网络安全基础知识一.1.IP与防火墙的设置IP地址分以下五类： A类 ： 从1.0.0.0 到126.255.255.255 ，适用于大型网络 B类 ： 从128.0.0.0到191.255.255.255 ，适用于中型网络 C类 ： 从192.0.0.0到223.255.255.255 ，适用于小型网络 D类 ： 从224.0.0.0到239.255.255.255，用于组播 E类">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaoyan-ship/image/main/imgimage-20231208121323920.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaoyan-ship/image/main/imgimage-20231208122717414.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaoyan-ship/image/main/imgimage-20231208123301971.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaoyan-ship/image/main/imgimage-20231208123400148.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaoyan-ship/image/main/imgimage-20231208123604561.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaoyan-ship/image/main/imgimage-20231208124115980.png">
 <meta property="article:published_time" content="2023-12-08T03:48:13.000Z">
-<meta property="article:modified_time" content="2023-12-08T03:48:13.679Z">
+<meta property="article:modified_time" content="2023-12-08T04:47:00.924Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/xiaoyan-ship/image/main/imgimage-20231208121323920.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -128,7 +137,36 @@
           <div class="panel-body" itemprop="articleBody">
             
                       <div class="entry">
-                        
+                        <h1 id="第二周实习-网络安全基础知识"><a href="#第二周实习-网络安全基础知识" class="headerlink" title="第二周实习 网络安全基础知识"></a>第二周实习 网络安全基础知识</h1><h1 id="一"><a href="#一" class="headerlink" title="一."></a>一.</h1><h2 id="1-IP与防火墙的设置"><a href="#1-IP与防火墙的设置" class="headerlink" title="1.IP与防火墙的设置"></a>1.IP与防火墙的设置</h2><p>IP地址分以下五类：</p>
+<p>A类 ： 从1.0.0.0 到126.255.255.255 ，适用于大型网络</p>
+<p>B类 ： 从128.0.0.0到191.255.255.255 ，适用于中型网络</p>
+<p>C类 ： 从192.0.0.0到223.255.255.255 ，适用于小型网络</p>
+<p>D类 ： 从224.0.0.0到239.255.255.255，用于组播</p>
+<p>E类 ： 从240.192.0.0.0到255.255.255.255，用于科研保留</p>
+<p>A,B,C为常用类别。</p>
+<h2 id="2-防火墙的设置"><a href="#2-防火墙的设置" class="headerlink" title="2.防火墙的设置"></a>2.防火墙的设置</h2><p><img src="https://raw.githubusercontent.com/xiaoyan-ship/image/main/imgimage-20231208121323920.png" alt="image-20231208121323920"></p>
+<h2 id="3-进制转换"><a href="#3-进制转换" class="headerlink" title="3.进制转换"></a>3.进制转换</h2><p>十进制转换为二进制：<br>需要分成整数和小数两个部分分别转换，当转换整数时，用的除2取余法，而转换小数时候，用的是乘2取整法。</p>
+<p> 二进制转十进制<br>方法：按权相加法，即将二进制每位上的数乘以权，然后相加之和即是十进制数。</p>
+<h2 id="4-子网掩码"><a href="#4-子网掩码" class="headerlink" title="4.子网掩码"></a>4.子网掩码</h2><p>子网掩码又叫网络掩码、地址掩码、子网络遮罩</p>
+<p>它是一种用来指明一个IP地址的哪些位 标识的是主机所在的子网，以及哪些位标识的是主机的位掩码</p>
+<p>子网掩码也是一个32位地址，只有一个作用：就是将某个IP地址划分成网络地址和主机地址两部分。</p>
+<h2 id="5-网络地址"><a href="#5-网络地址" class="headerlink" title="5.网络地址"></a>5.网络地址</h2><p>①将IP地址和子网掩码换算为二进制，子网掩码连续全1的是网络地址，后面的是主机地址</p>
+<p>②将子网掩码和IP地址按位进行逻辑“与”运算，得到IP地址的网络地址</p>
+<p> 剩下的部分就是主机地址，从而区分出任意IP地址中的网络地址和主机地址</p>
+<p>③将运算结果中的网络地址不变，主机地址变为1，结果就是广播地址</p>
+<p>注：网络地址+1即为第一个主机地址，广播地址-1即为最后一个主机地址</p>
+<p>由此可以看出地址范围是： 网络地址+1 至 广播地址-1。</p>
+<h2 id="6-主机IP地址"><a href="#6-主机IP地址" class="headerlink" title="6.主机IP地址"></a>6.主机IP地址</h2><p><img src="https://raw.githubusercontent.com/xiaoyan-ship/image/main/imgimage-20231208122717414.png" alt="image-20231208122717414"></p>
+<h1 id="二"><a href="#二" class="headerlink" title="二."></a>二.</h1><h2 id="1-华为模拟器中ensp和virtualbox的安装"><a href="#1-华为模拟器中ensp和virtualbox的安装" class="headerlink" title="1.华为模拟器中ensp和virtualbox的安装"></a>1.华为模拟器中ensp和virtualbox的安装</h2><p><img src="https://raw.githubusercontent.com/xiaoyan-ship/image/main/imgimage-20231208123301971.png" alt="image-20231208123301971"></p>
+<p><img src="https://raw.githubusercontent.com/xiaoyan-ship/image/main/imgimage-20231208123400148.png" alt="image-20231208123400148"></p>
+<p><img src="https://raw.githubusercontent.com/xiaoyan-ship/image/main/imgimage-20231208123604561.png" alt="image-20231208123604561"></p>
+<h2 id="2-路由器的IP配置"><a href="#2-路由器的IP配置" class="headerlink" title="2.路由器的IP配置"></a>2.路由器的IP配置</h2><p>system-view          ———–进入系统配置模式</p>
+<p>interface GigabitEthernet 0&#x2F;0&#x2F;0 ——-进入设备接口</p>
+<p>ip address 192.168.1.100 255.255.255.0 ————在接口里面配置ip</p>
+<p>q   退去下一级</p>
+<p>display current-configuration </p>
+<p><img src="https://raw.githubusercontent.com/xiaoyan-ship/image/main/imgimage-20231208124115980.png" alt="image-20231208124115980"></p>
+<h2 id="3-静态路由的设置"><a href="#3-静态路由的设置" class="headerlink" title="3.静态路由的设置"></a>3.静态路由的设置</h2>
                       </div>
                       
                       <!-- <div id="cyReward" class="text-center margin-top" role="cylabs" data-use="reward"></div> -->
@@ -143,18 +181,10 @@
     
   <ul class="pager margin clearfix border-main">
     
-      <li class="float-left">
-        <a href="/2023/12/08/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
-            
-              网络安全基础知识
-                
-        </a>
-      </li>
-      
         
           <li class="float-right">
-            <a href="/2023/12/07/%E6%98%9F%E6%9C%9F%E4%B8%80/">
-                星期一
+            <a href="/2023/12/07/%E5%AE%9E%E4%B9%A0%E7%AC%AC%E4%B8%80%E5%91%A8/">
+                实习第一周
             </a>
           </li>
           
@@ -193,15 +223,11 @@
     <div class="panel-head bg-main">Recent Posts</div>
     <div class="list-link" style="border-radius:0px;">
         
-            <a href="/2023/12/08/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-1/">网络安全基础知识</a>
-        
-            <a href="/2023/12/08/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">网络安全基础知识</a>
-        
             <a href="/2023/12/08/%E7%AC%AC%E4%BA%8C%E5%91%A8%E5%AE%9E%E4%B9%A0%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%9F%A5%E8%AF%86/">第二周实习网络安全知识</a>
         
-            <a href="/2023/12/07/%E6%98%9F%E6%9C%9F%E4%B8%80/">星期一</a>
-        
             <a href="/2023/12/07/%E5%AE%9E%E4%B9%A0%E7%AC%AC%E4%B8%80%E5%91%A8/">实习第一周</a>
+        
+            <a href="/2023/11/30/hello-world/">Hello World</a>
         
     </div>
   </div>
