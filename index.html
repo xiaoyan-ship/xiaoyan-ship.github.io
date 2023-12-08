@@ -157,7 +157,41 @@
 <p>q   退去下一级</p>
 <p>display current-configuration </p>
 <p><img src="https://raw.githubusercontent.com/xiaoyan-ship/image/main/imgimage-20231208124115980.png" alt="image-20231208124115980"></p>
-<h2 id="3-静态路由的设置"><a href="#3-静态路由的设置" class="headerlink" title="3.静态路由的设置"></a>3.静态路由的设置</h2>
+<h2 id="3-静态路由的设置"><a href="#3-静态路由的设置" class="headerlink" title="3.静态路由的设置"></a>3.静态路由的设置</h2><p>静态路由格式：ip route-static 目标网段 子网掩码 下一跳IP或者出接口 [优先级] </p>
+<p>ip route-static 192.168.111.0 255.255.255.0 192.168.52.12</p>
+<p>192.168.1.10ping的通192.168.3.10的截图</p>
+<p><img src="https://raw.githubusercontent.com/xiaoyan-ship/image/main/imgimage-20231208125225138.png" alt="image-20231208125225138"></p>
+<h1 id="三"><a href="#三" class="headerlink" title="三."></a>三.</h1><h2 id="1-利用ospf协议来阻断特定IP主机的网络"><a href="#1-利用ospf协议来阻断特定IP主机的网络" class="headerlink" title="1.利用ospf协议来阻断特定IP主机的网络"></a>1.利用ospf协议来阻断特定IP主机的网络</h2><p>sys<br>ospf<br>area 0.0.0.0<br>network 1直连网段 0反子网掩码<br>q</p>
+<p>ospf  开启了ospf路由协议<br>area 0.0.0.0  进入骨干区域<br>network 1直连网段 0反子网掩码</p>
+<p>ospf  开启了ospf路由协议<br>area 0.0.0.0  进入骨干区域<br>network 直连网段 反子网掩码</p>
+<p>网络调通的发 192.168.1.10 ping 5.10的截图</p>
+<p><img src="https://raw.githubusercontent.com/xiaoyan-ship/image/main/imgimage-20231208125701527.png" alt="image-20231208125701527"></p>
+<h2 id="2-osi模型的介绍"><a href="#2-osi模型的介绍" class="headerlink" title="2.osi模型的介绍"></a>2.osi模型的介绍</h2><p>1.物理层：实现实际终端信号的传输，码流通过物理介质传输。常用设备有：集线器、中继器、网线、双绞线等。<br>2.数据链路层：提供介质访问和链路管理。把位元合并为字节，然后将字节合并到帧中，以使媒体能够通过数据链路层访问。<br>3.网络层：IP选址及路由选择。<br>4.传输层：建立、维护、管理端到端的区别。<br>5.会话层：建立、管理和维护表示层实体的会话。<br>6.表示层：数据格式转化，对数据进行加密。<br>7.应用层：为应用程序提供服务</p>
+<p><img src="https://raw.githubusercontent.com/xiaoyan-ship/image/main/imgimage-20231208125944461.png" alt="image-20231208125944461"></p>
+<h2 id="3-清理C盘文件"><a href="#3-清理C盘文件" class="headerlink" title="3.清理C盘文件"></a>3.清理C盘文件</h2><p>清理C盘的重要步骤<br>1.将需要下载的地方，设置成其他盘<br>比如：微信 浏览器，减少文件的累积<br>2.借助磁盘扫描工具展示出大文件<br>找出对应的大文件进行判断是否需要<br>3.清理一些临时文件<br>在c盘属性，磁盘清理里面，根据文件大小及重要程度判断是否需要清理<br>4.清理常用软件的缓存<br>5.养成好的习惯，软件安装尽量不要安装在C盘。</p>
+<h2 id="4-dhcp服务"><a href="#4-dhcp服务" class="headerlink" title="4.dhcp服务"></a>4.dhcp服务</h2><p>dhcp enable  —开启dhcp服务<br>ip pool 10     –创建ip地址池，池里面的地址用于下发给pc<br>nework 192.168.10.0 mask 255.255.255.0   在地址池里面发布地址<br>gateway-list 192.168.10.254   设置网关<br>dns-list 192.168.100.2  设置dns服务器<br>lease day 2  释放地址的天数</p>
+<p>interface g 0&#x2F;0&#x2F;0        进入接口<br>dhcp select global     将接口选择为下发地址。</p>
+<h1 id="四"><a href="#四" class="headerlink" title="四."></a>四.</h1><h2 id="1-介绍了解ARP欺骗原理"><a href="#1-介绍了解ARP欺骗原理" class="headerlink" title="1.介绍了解ARP欺骗原理"></a>1.介绍了解ARP欺骗原理</h2><p>向受害者主机发送arp报文，然后将其报文中的MAC地址设置成为自己的MAC地址，然后目标数据上网发送数据包的时候都会发送到自己的主机，然后我们做一个丢弃数据包的命令，就可以断掉受害者的网络。</p>
+<h2 id="2-进行ARP欺骗攻击"><a href="#2-进行ARP欺骗攻击" class="headerlink" title="2.进行ARP欺骗攻击"></a>2.进行ARP欺骗攻击</h2><p>网络配置<br>需要配置为桥接模式，配置桥接模式原因：<br>因为需要我们手动去配置IP地址和网关，IP地址要与主机的无线网的IP段对应，子网掩码，网关都需要和宿主机保持一致，这样子才可以在同一个局域网进行ARP欺骗攻击，如果是net模式攻击无法生效</p>
+<h2 id="配置第一步"><a href="#配置第一步" class="headerlink" title="配置第一步"></a>配置第一步</h2><p>打开编辑 ———&gt; 虚拟网络编辑器 ———&gt; 选择桥接模式</p>
+<p><img src="https://raw.githubusercontent.com/xiaoyan-ship/image/main/imgimage-20231208131246357.png" alt="image-20231208131246357"></p>
+<p>其中PCIe为网线的 wifi是WiFi的</p>
+<p>然后点击虚拟机 ———&gt; 设置 ———&gt; 把网络配置器设置为桥接模式</p>
+<h2 id="配置第二步"><a href="#配置第二步" class="headerlink" title="配置第二步"></a>配置第二步</h2><p>在本机Win+r，然后cmd回车，输入命令：ipconfig</p>
+<p> <img src="https://raw.githubusercontent.com/xiaoyan-ship/image/main/imgimage-20231208131544130.png" alt="image-20231208131544130"></p>
+<p>然后在kali终端输入命令，设置静态ip，需要设为和你局域内网同网段</p>
+<p>设置eth0网卡静态IP<br>命令：vi &#x2F;etc&#x2F;network&#x2F;interfaces</p>
+<p>然后在下面一排添加以下代码</p>
+<p>auto eth0<br>iface eth0 inet static<br>address 192.168.110.100<br>netmask 255.255.255.0<br>gateway 192.168.110.1<br>dns-nameservers 114.114.114.114<br>然后保存并退出</p>
+<h2 id="配置第三步"><a href="#配置第三步" class="headerlink" title="配置第三步"></a>配置第三步</h2><p>在终端输入命令：vi &#x2F;etc&#x2F;resolv.conf</p>
+<p>打开时这样子的</p>
+<p>需要修改为</p>
+<p>domain localdomain<br>search localdomain<br>nameserver 8.8.8.8<br>nameserver 114.114.114.114</p>
+<h2 id="配置第四步"><a href="#配置第四步" class="headerlink" title="配置第四步"></a>配置第四步</h2><p>重启网络</p>
+<p>输入命令：service networking restart 或者 &#x2F;etc&#x2F;init.d&#x2F;networking restart</p>
+<h4 id="ping-baidu-com截图："><a href="#ping-baidu-com截图：" class="headerlink" title="ping baidu.com截图："></a>ping baidu.com截图：</h4><p> <img src="https://raw.githubusercontent.com/xiaoyan-ship/image/main/imgimage-20231208132142270.png" alt="image-20231208132142270"></p>
+<h4 id="对IP为192-168-110-113进行网络截断"><a href="#对IP为192-168-110-113进行网络截断" class="headerlink" title="对IP为192.168.110.113进行网络截断"></a>对IP为192.168.110.113进行网络截断</h4><p><img src="https://raw.githubusercontent.com/xiaoyan-ship/image/main/imgimage-20231208132154655.png" alt="image-20231208132154655"></p>
+
                       </div>
                       
                       <!-- <div id="cyReward" class="text-center margin-top" role="cylabs" data-use="reward"></div> -->
